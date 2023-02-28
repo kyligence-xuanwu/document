@@ -103,3 +103,12 @@ tpcds-run   1/1           33m        48m
 
 ### 3. 部署 Byzer
 为在低代码平台上体验 AI 机器学习，从数据准备、模型训练、到模型发布的全链路，通过 Xuanwu Manager 的 Web GUI 可以快速[部署 Byzer](./manual/byzer_installation_guide.md "部署 Byzer") 
+
+
+***
+
+### 欢迎加入讨论组
+
+![alt text](/asset/xuanwu_group_qrcode.png "玄武（XUANWU）讨论组")
+
+
