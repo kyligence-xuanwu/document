@@ -22,11 +22,11 @@ Kyligence 云原生数据底座简称 KYLIGENCE XUANWU，它是一个开源套�
 Quick Start
 ============
 ### 1. 快速部署
-#### 1.1 部署 Xuanwu Manager 步骤
+#### 1.1 一个脚本部署 Xuanwu Manager
 Xuanwu Manager 提供对资源、作业和服务的管理与观测能力，它是数据服务运行的基础。
 ##### 1.1.1 获取安装脚本
 ```Bash
-wget --no-check-certificate https://s3.cn-north-1.amazonaws.com.cn/public.kyligence.io/xuanwu/release/alpha20221230/install_opensource.sh
+wget --no-check-certificate https://s3.cn-north-1.amazonaws.com.cn/public.kyligence.io/xuanwu/release/alpha20230310/install_opensource.sh
 ```
 ##### 1.1.2 执行安装脚本
 ```Bash
@@ -37,49 +37,15 @@ bash install_opensource.sh
 - 平台管理员：ADMIN/KYLIN（默认）
 
 
-#### 1.2 部署数据服务步骤
-##### 1.2.1 获取安装脚本
-```Bash
-# 获取安装包并解压
-wget --no-check-certificate https://s3.cn-north-1.amazonaws.com.cn/public.kyligence.io/xuanwu-services/release/alpha20221230_opensource.tar.gz
-```
-##### 1.2.2 配置对象存储
-请修改 ```xuanwu-1.0-alpha-part-1/values.yaml```
-```YAML
-# 对象存储
-storage:
-  type: obs # 华为填写 obs，阿里填写 oss
-  bucket: https://mybucket.obs.cn-east-3.myhuaweicloud.com # bucket 地址（obs 为例）
-  accessKey: yourAccessKey
-  secretKey: yourSecretKey
-```
-##### 1.2.3 配置 RSS
-为提高存算分离架构下计算引擎执行稳定性，推荐[部署 RSS 服务](./manual/rss_installation_guide.md "部署 RSS 服务")，请将 RSS Master 地址填入文件 ```xuanwu-1.0-alpha-part-1/values.yaml``` ，示例如下：
-```YAML
-kyuubi:
-  spark:
-    rss: # RSS 地址
-      - addresses:
-        - ip: 10.1.2.146
-        ports:
-        - port: 9097
-          protocol: TCP
-      - addresses:
-        - ip: 10.1.2.147
-        ports:
-        - port: 9097
-          protocol: TCP
-      - addresses:
-        - ip: 10.1.2.148
-        ports:
-        - port: 9097
-          protocol: TCP
-```
-##### 1.2.4 执行安装脚本
-在安装包目录下找到 ```install.sh``` 并执行
+#### 1.2 通过 Xuanwu Manager GUI 部署数仓服务
+通过 Xuanwu Manager 的 Web GUI 可以快速[部署数仓服务](./manual/dw_installation_guide.md "部署数仓服务") ，用户可以通过 BI 工具或 DBeaver 等工具使用 SQL 进行数仓建模
 
 ### 2. 快速使用
 #### 2.1 一行命令，生成 TPC-DS 数据集
+获取和解压脚本
+```Bash
+wget --no-check-certificate https://s3.cn-north-1.amazonaws.com.cn/public.kyligence.io/xuanwu-services/release/alpha20221230_opensource.tar.gz
+```
 进入安装包根目录，执行
 ```Bash
 kubectl apply -f ./tpcds-setup.yaml
@@ -108,7 +74,7 @@ tpcds-run   1/1           33m        48m
 ***
 
 ### 欢迎加入讨论组
-
+部署和使用过程中遇到任何问题，可以在讨论组中提问寻求解答
 ![alt text](/asset/xuanwu_group_qrcode.png "玄武（XUANWU）讨论组")
 
 
