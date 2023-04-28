@@ -44,7 +44,7 @@ bash install_opensource.sh
 #### 2.1 一行命令，生成 TPC-DS 数据集
 获取和解压脚本
 ```Bash
-wget --no-check-certificate https://s3.cn-north-1.amazonaws.com.cn/public.kyligence.io/xuanwu-services/release/alpha20221230_opensource.tar.gz
+wget --no-check-certificate https://s3.cn-north-1.amazonaws.com.cn/public.kyligence.io/xuanwu-services/release/alpha20230420_opensource.tar.gz
 ```
 进入安装包根目录，执行
 ```Bash
