@@ -73,8 +73,4 @@ tpcds-run   1/1           33m        48m
 
 ***
 
-### 欢迎加入讨论组
-部署和使用过程中遇到任何问题，可以在讨论组中提问寻求解答
-![alt text](/asset/xuanwu_group_qrcode.png "玄武（XUANWU）讨论组")
-
 
